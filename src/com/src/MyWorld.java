@@ -4,7 +4,7 @@ public class MyWorld {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		System.out.println("this is my world for next 1000 years");
+		System.out.println("this is my world for next 100 years");
 	}
 
 }
