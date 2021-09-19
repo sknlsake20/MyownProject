@@ -1,0 +1,135 @@
+package task4;
+
+public abstract class Animal {
+	protected int legs;
+
+	protected Animal(int legs) {
+		this.legs = legs;
+	}
+	
+	public abstract void eat();
+	
+	public void walk() {
+		
+	}
+	
+	
+
+package task4;
+
+public class Cat extends Animal implements Pet{
+	private String name;
+	public Cat(String n) {
+		super(4);
+		System.out.println(n+" cat have 4 legs..");
+		name=n;
+	}
+	public Cat() {
+		this("");
+	}
+	@Override
+	public String getName() {
+		
+		return name;
+	}
+	@Override
+	public void setName(String n) {
+		name=n;
+		
+	}
+	@Override
+	public void play() {
+		System.out.println("The "+name+" played..");
+		
+	}
+	@Override
+	public void eat() {
+		System.out.println("Cats eat mice and fruits..");
+	}
+	
+	
+}
+
+
+
+
+package task4;
+
+public class Fish extends Animal{
+	
+	public Fish() {
+		super(0);
+		System.out.println("Fish dont have legs..");
+	}
+
+	@Override
+	public void eat() {
+		
+	}
+
+	@Override
+	public void walk() {
+		System.out.println("Fish cant walk..");
+	}
+	
+	
+}
+
+
+
+
+
+package task4;
+
+public interface Pet {
+	public String getName();
+    public void setName (String n);
+    public void play ();
+}
+
+
+
+package task4;
+
+public class Spider extends Animal{
+	public Spider() {
+		super(8);
+		System.out.println("All spider has 8 legs..");
+	}
+
+	@Override
+	public void eat() {
+		System.out.println("The spider eats insects..");
+	}
+	
+	
+
+	
+}
+
+
+
+package task4;
+
+public class TestAnimals {
+
+	public static void main(String[] args) {
+		Fish d = new Fish();
+		Cat c = new Cat("Fluffy");
+		Animal a = new Fish();
+		Animal e = new Spider();
+		Pet p = new Cat();
+		d.walk();
+		c.getName();
+		c.setName("Fluffy");
+		c.play();
+		c.eat();
+		e.eat();
+		
+		
+
+	}
+
+}
+
+
