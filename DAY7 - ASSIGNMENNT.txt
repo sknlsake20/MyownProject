@@ -1,0 +1,379 @@
+1) DUPLICATE STRING PROGRAM
+
+package com.src;
+import java.util.Scanner;
+public class DuplicateString {
+
+	public static void main(String[] args) {
+		   
+		        String string1;
+		        Scanner sc = new Scanner(System.in);
+					string1=sc.nextLine();
+				
+			    System.out.println("enter your string");
+		        int count;  
+		            
+		        char string[] = string1.toCharArray();  
+		          
+		        System.out.println("Duplicate characters in a given string: ");  
+		        
+		        for(int i = 0; i <string.length; i++) {  
+		            count = 1;  
+		            for(int j = i+1; j <string.length; j++) {  
+		                if(string[i] == string[j] && string[i] != ' ') {  
+		                    count++;  
+		                     
+		                    string[j] = '0'; 
+		                                    }  
+		                                }  
+		                                //A character is considered as duplicate if count is greater than 1  
+		                                if(count > 1 && string[i] != '0')  
+		                                    System.out.println(string[i]);  
+		                            }  
+		                        }
+		                    }
+		                
+		     
+
+
+
+2) ANAGRAM PROGRAM:
+
+
+package com.src;
+
+
+import java.util.Arrays;
+import java.util.Scanner;
+
+class Anagrams {
+  public static void main(String[] args) {
+    String str1;
+    String str2 ;
+
+     Scanner sc=new Scanner(System.in);
+     str1 = sc.nextLine();
+     
+     System.out.println("enter your string1");
+   
+     Scanner sc1=new Scanner(System.in);
+     str2 = sc1.nextLine();
+     System.out.println("enter your string1");
+   
+    str1 = str1.toLowerCase();
+    str2 = str2.toLowerCase();
+
+    // check if length is same
+    if(str1.length() == str2.length()) {
+
+      // convert strings to char array
+      char[] charArray1 = str1.toCharArray();
+      char[] charArray2 = str2.toCharArray();
+
+      // sort the char array
+      Arrays.sort(charArray1);
+      Arrays.sort(charArray2);
+
+      // if sorted char arrays are same
+      // then the string is anagram
+      boolean result = Arrays.equals(charArray1, charArray2);
+
+      if(result) {
+        System.out.println(str1 + " and " + str2 + " are anagram.");
+      }
+      else {
+        System.out.println(str1 + " and " + str2 + " are not anagram.");
+      }
+    }
+    else {
+      System.out.println(str1 + " and " + str2 + " are not anagram.");
+    }
+  }
+}
+
+
+
+3)print first repeated character
+
+
+public class FirstOccurence {
+
+ public static void main(String[] args) {
+  String str = "zanzibar";
+  
+  boolean found = false;
+  for(int i = 0; i < str.length(); i++){
+   found = true;
+   char c = str.charAt(i);
+   
+   for(int j = 0; j < str.length(); j++){
+    
+    if(c == str.charAt(j) && j != i){
+     found = false;
+     break;
+    }
+   }
+   if(found){
+    System.out.println("Character is "  + c);
+    break;
+   }
+  }
+  if(!found){
+   System.out.println("No single character found");
+  }
+  
+ }
+}
+
+4)REVERSE A STRING USING RECURSION:
+
+
+package com.src;
+
+public class ReverseString {
+	 
+	public static void main(String[] args) {
+ 
+ 
+		String myStr = "shalini";
+ 
+  
+		String reversed = reverseString(myStr);
+		System.out.println("The reversed string is: " + reversed);
+		
+	}
+ 
+	public static String reverseString(String myStr)
+	{
+		if (myStr.isEmpty()){
+			
+		 return myStr;
+		}
+		
+		
+		return reverseString(myStr.substring(1)) + myStr.charAt(0);
+	}
+ 
+}
+
+
+5)DIGIT PROGRAM
+
+
+package com.src;
+
+
+public class DigitString {
+	   public static void main(String []args) {
+	      String str="9080" ;
+	      
+	    
+	      System.out.println("String: "+str);
+	      if(str.matches("[0-9]+") && str.length() > 2) {
+	         System.out.println("String contains only digits!");
+	      } else {
+	         System.out.println("String contains digits as well as other characters!");
+	      }
+	   }
+	}
+
+
+6) VOWEL AND CONSONANT
+
+
+package com.src;
+
+import java.util.Scanner;
+
+public class VowelAndConsonant {
+	  public static void main(String[] args) {    
+          int vCount = 0, cCount = 0;    
+          Scanner sc= new Scanner(System.in); 
+          System.out.println("enter YOur string");
+	      String str  = sc.nextLine(); 
+	       str= str.toLowerCase();    
+	            
+	        for(int i = 0; i < str.length(); i++) {    
+	                
+	            if(str.charAt(i) == 'a' || str.charAt(i) == 'e' || str.charAt(i) == 'i' || str.charAt(i) == 'o' || str.charAt(i) == 'u') {    
+	                    
+	                vCount++;    
+	            }    
+	              
+	            else if(str.charAt(i) >= 'a' && str.charAt(i)<='z') {      
+	                  
+	                cCount++;    
+	            }    
+	        }    
+	        System.out.println("Number of vowels: " + vCount);    
+	        System.out.println("Number of consonants: " + cCount);    
+	    }    
+}
+
+
+7) OCCURANCE PROGRAM
+	
+
+
+package com.src;
+
+public class Occurance {
+	public static void main(String[] args){
+		String str = "abracadabra-banana";
+		System.out.println(str);
+		// count occurrence 
+		int count = str.length() - str.replace("a", "").length();
+		System.out.println("occurrence of a: "+count);
+	}
+}
+
+
+8)REVERSE PROGRAM WITHOUT USING LIBRARY ,METHOD
+
+
+
+package com.src;
+
+import java.util.Scanner;
+
+public class ReverseProgram 
+ {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Original string : ");
+ 
+        String originalStr = scanner.nextLine();
+        scanner.close();
+ 
+        String words[] = originalStr.split("\\s");
+        String reversedString = "";
+ 
+        for (int i = 0; i < words.length; i++) 
+        {
+            String word = words[i];
+            String reverseWord = "";
+            for (int j = word.length() - 1; j >= 0; j--) {
+                reverseWord = reverseWord + word.charAt(j);
+            }
+            reversedString = reversedString + reverseWord + " ";
+        }
+ 
+        
+        System.out.print("Reversed string : " + reversedString);
+    }
+}
+
+9)ROTATION OF STRING
+
+
+package com.src;
+
+import java.util.Scanner;
+
+public class RotateEachOther {
+
+	public static void main(String[] args) {  
+		Scanner sc=new Scanner(System.in);
+		System.out.println("enter your string1");
+		
+        String str1 = sc.nextLine();
+        	  
+        Scanner sc1=new Scanner(System.in);
+		System.out.println("enter your string2");
+		
+        String str2 = sc1.nextLine();
+        	  
+          
+        if(str1.length() != str2.length()){  
+            System.out.println("Second string is not a rotation of first string");  
+        }  
+        else {  
+            //Concatenate str1 with str1 and store it in str1  
+            str1 = str1.concat(str1);  
+              
+            //Check whether str2 is present in str1  
+            if(str1.indexOf(str2) != -1)  
+                System.out.println("Second string is a rotation of first string");  
+            else  
+                System.out.println("Second string is not a rotation of first string");  
+        }  
+    }  
+}  
+
+
+10)PALINDROME PROGRAM
+
+package com.src;
+
+import java.util.Scanner;
+
+public class PalindromeString    
+{    
+    public static void main(String[] args) { 
+    	Scanner sc = new Scanner(System.in);
+    	System.out.println("enter your string");
+        String string = sc.nextLine();    
+        boolean flag = true;    
+            
+        //Converts the given string into lowercase    
+        string = string.toLowerCase();    
+            
+        //Iterate the string forward and backward, compare one character at a time     
+        //till middle of the string is reached    
+        for(int i = 0; i < string.length()/2; i++){    
+            if(string.charAt(i) != string.charAt(string.length()-i-1)){    
+                flag = false;    
+                break;    
+            }    
+        }    
+        if(flag)    
+            System.out.println("Given string is palindrome");    
+        else    
+            System.out.println("Given string is not a palindrome");    
+    }    
+}    
+
+
+11)COUNT CHARACTER 
+package com.src;
+
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.Scanner;
+
+public class Assignment {
+
+	public static void main(String[] args) throws IOException {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter the file name");
+		String filename = sc.nextLine();
+		System.out.println("Enter the character to be counted");
+		char needle = sc.nextLine().charAt(0);
+	
+		File file = new File(filename);
+		int charCount = 0;
+		
+		BufferedReader br = new BufferedReader(new FileReader(file));
+		
+		int ch;
+		do {
+			ch = br.read();
+			
+			if (ch >= 65 && ch <= 90) ch += 32;
+			if (needle >= 65 && needle <= 90) needle += 32;
+			
+			if (ch == needle)
+				charCount++;
+		} while (ch != -1);
+				
+		System.out.println("File '" + filename + "' has " +
+				charCount + " instances of letter '" + needle + "'.");
+		
+		br.close();
+		sc.close();
+	}
+
+}
+
